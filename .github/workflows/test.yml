@@ -2,6 +2,12 @@ name: Echo Local Variable
 
 on:
   workflow_dispatch:  # This allows manual triggering from the GitHub UI
+    inputs:
+      deploy_target:
+        description: 'Deployment target'
+        required: true
+        
+run-name: Deploy to ${{ inputs.deploy_target }} by @${{ github.actor }}
 
 jobs:
   echo-variable:
