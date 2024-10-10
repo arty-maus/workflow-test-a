@@ -1,0 +1,13 @@
+name: Echo Local Variable
+
+on:
+  workflow_dispatch:  # This allows manual triggering from the GitHub UI
+
+jobs:
+  echo-variable:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: echo local variable
+      run: |
+        echo ${{ vars.my_local_variable }}
